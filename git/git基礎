@@ -1,0 +1,57 @@
+git init を使用してローカルリポジトリを新規作成する方法
+https://genesis-tech.jp/blog/how-to-init-git-repositories/
+
+https://kinsta.com/jp/knowledgebase/install-git/#linuxgit
+
+逆に外部サービスを使った資格学習のための問題演習などは少し手間です。
+読書や動画サービスのようにマークダウンにまとめながらアウトプットしてもよいのですが、
+資格系の問題演習は移動時間や隙間時間に利用することも多いので、
+都度Githubにコミットするのは難しいです。
+
+アカウント登録したら、 GitHub で登録した ユーザー名 と メールアドレスを
+PC のターミナルで git config コマンドを実行して、設定します。
+ターミナル
+# ユーザー名を設定（" "内は自分の user.name に置き換える）
+$ git config --global user.name "github user name"
+# メールアドレスを設定（GitHubで設定した自分の user.email に置き換える）
+$ git config --global user.email github@example.com
+
+Git branchとは
+変更履歴を枝のように分岐して残していく機能
+新しいブランチを作ることを「ブランチを切る」という
+
+branchの切り方
+まず自分が今どのbranchにいるのか確認
+git branch
+
+mainにいる場合は * main と表示される(今いる場所に＊がつく)
+ここから新しくbranchを作る
+git branch $作成したいbranch名
+ちゃんと作れているか git branch で確認
+
+新しく作成したbranchをpush
+git push origin $作成したbranch
+
+branchで作業したら
+branchで作業してmainに戻りたい時、必ずcommitしてから動く
+
+新規ファイルを作って作業した場合、このまま動くとgitで管理されていないファイルなので、branchの変更内容がmainに反映されてしまう
+
+git status で見ると変更を加えたファイルが赤くなっている
+
+git add $変更したファイル（-A にして全部addしてもよい）でadd
+
+ちゃんとaddできているか git status で確認
+さっき赤かったファイルが黄色になっている
+
+git commit -m '$コメント' でcommitする
+　ここで git status 確認すると何もないはず
+
+ここまでしてから移動する
+git checkout main
+
+branchの変更をmainにmergeする
+mainに移動してから
+git merge $変更したbranch名
+
+mainでファイルを開くと変更内容が反映されているはず

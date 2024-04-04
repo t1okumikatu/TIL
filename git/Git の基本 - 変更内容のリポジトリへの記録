@@ -1,0 +1,29 @@
+Git の基本 - 変更内容のリポジトリへの記録
+https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E5%9F%BA%E6%9C%AC-%E5%A4%89%E6%9B%B4%E5%86%85%E5%AE%B9%E3%81%AE%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%B8%E3%81%AE%E8%A8%98%E9%8C%B2
+ファイルの状態の確認
+どのファイルがどの状態にあるのかを知るために主に使うツールが git status コマンドです。 このコマンドをクローン直後に実行すると、このような結果となるでしょう。
+
+$ git status
+On branch master
+nothing to commit, working directory clean
+$ echo 'My Project' > README
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+    README
+
+nothing added to commit but untracked files present (use "git add" to track)
+新しいファイルの追跡
+新しいファイルの追跡を開始するには git add コマンドを使用します。 READMEファイルの追跡を開始する場合はこのようになります。
+
+$ git add README
+再び status コマンドを実行すると、READMEファイルが追跡対象となってステージされており、コミットする準備ができていることがわかるでしょう。
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+    new file:   README

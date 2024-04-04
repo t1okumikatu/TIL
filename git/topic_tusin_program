@@ -1,0 +1,29 @@
+~/ros2_ws/src$ ros2 pkg create --build-type ament_python py_pubsub
+~/ros2_ws/src$ cd py_pubsub/py_pubsub/
+~/ros2_ws/src/py_pubsub/py_pubsub $ touch publisher_member_function.py
+
+entry_points={   'console_scripts': [   
+'talker = py_pubsub.publisher_member_function:main',
+],   },
+
+~/ros2_ws/src$ ros2 pkg create --build-type ament_python –node-name talker py_pubsub
+■subscriberノードを書く
+entry_points={   'console_scripts': [   
+'talker = py_pubsub.publisher_member_function:main',
+'listener = py_pubsub.subscriber_member_function:main',
+],   },
+
+~$ cd ros2_ws
+~/ros2_ws$ sudo rosdep init
+~/ros2_ws$ rosdep update
+~/ros2_ws$ rosdep install -i --from-path src --rosdistro humble -y
+~/ros2_ws$ colcon build --packages-select py_pubsub
+~/ros2_ws$ source install/setup.bash
+~/ros2_ws$ ros2 run py_pubsub talker
+~$ source /opt/ros/humble/setup.bash
+~$ cd ros2_ws
+~/ros2_ws$ source install/setup.bash
+~/ros2_ws$ ros2 run py_pubsub listener
+
+
+

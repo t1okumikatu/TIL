@@ -1,0 +1,4 @@
+git fetch
+git checkout -m origin/master Readme.md
+git add Readme.md
+git commit -m "Readme"
