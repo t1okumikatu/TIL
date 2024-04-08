@@ -16,42 +16,47 @@ def drive(): #0.1秒ごとに実行
     global err_I_L
     global err_prev_R
     global err_prev_L
+
     speed_R = (count_R - prev_count_R)/40/DURATION
     err_P = target_speed_R - speed_R
     err_I_R += err_P * DURATION
     err_D = (err_P - err_prev_R)/DURATION
     duty_R = Kp * err_P + Ki * err_I_R + Kd * err_D
     if duty_R > 0:
-         if duty_R > 100.0:
-               duty_R = 100.0
-         pi.set_PWM_dutycycle(MOT_R_1, duty_R)
-         pi.set_PWM_dutycycle(MOT_R_2, 0)
+              if duty_R > 100.0:
+                     duty_R = 100.0
+              pi.set_PWM_dutycycle(MOT_R_1, duty_R)
+              pi.set_PWM_dutycycle(MOT_R_2, 0)
     else:
               if duty_R < -100.0:
                       duty_R = -100.0
               pi.set_PWM_dutycycle(MOT_R_1, 0)
               pi.set_PWM_dutycycle(MOT_R_2, -duty_R)
-              prev_count_R = count_R
-              err_prev_R = err_P
-              speed_L = (count_L - prev_count_L)/40/DURATION
-              err_P = target_speed_L - speed_L
-              err_I_L += err_P * DURATION
-              err_D = (err_P - err_prev_L)/DURATION
-              duty_L = Kp * err_P + Ki * err_I_L + Kd * err_D
-         if duty_L > 0:
+
+    prev_count_R = count_R
+    err_prev_R = err_P
+#==============================
+    speed_L = (count_L - prev_count_L)/40/DURATION
+    err_P = target_speed_L - speed_L
+    err_I_L += err_P * DURATION
+    err_D = (err_P - err_prev_L)/DURATION
+    duty_L = Kp * err_P + Ki * err_I_L + Kd * err_D
+    if duty_L > 0:
               if duty_L > 100.0:
                       duty_L = 100.0
               pi.set_PWM_dutycycle(MOT_L_1, duty_L)
               pi.set_PWM_dutycycle(MOT_L_2, 0)
-         else:
+    else:
               if duty_L < -100.0:
                       duty_L = -100.0
               pi.set_PWM_dutycycle(MOT_L_1, 0)
               pi.set_PWM_dutycycle(MOT_L_2, -duty_L)
-              prev_count_L = count_L
-              err_prev_L = err_P
-              t = threading.Timer(DURATION, drive) #DURATION秒後にdriveを実行
-              t.start()
+
+    prev_count_L = count_L
+    err_prev_L = err_P
+    
+    t = threading.Timer(DURATION, drive) #DURATION秒後にdriveを実行
+    t.start()
 pi = pigpio.pi()
 # encoder settings
 ENC_R = 10
