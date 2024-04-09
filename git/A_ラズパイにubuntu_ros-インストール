@@ -15,7 +15,7 @@ R:~$ sudo apt install ros-humble-ros-base
 R:~$ sudo apt install ros-dev-tools
 R:$ source /opt/ros/humble/setup.bash
 R:$ ros2 run demo_nodes_cpp talker
-$ ssh pi@raspi4.local
+$ ssh keime@raspi.local
 R:$ source /opt/ros/humble/setup.bash
 R:$ ros2 run demo_nodes_py listener
 R:$ source /opt/ros/humble/setup.bash
