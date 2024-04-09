@@ -1,1 +1,44 @@
+~$ sudo apt update   ~$ sudo apt upgrade
+~$ sudo apt install openssh-server  もう一つ、「avahi-daemon」をインストールして、設定したホスト名（raspi4）でログインできるようにします。インストールが完了したら一回再起動します。   ~$ sudo apt install avahi-daemon   ~$ sudo reboot
+R:~$ sudo apt install software-properties-common   R:~$ sudo add-apt-repository universe   R:~$ sudo apt update && sudo apt install curl -y   R:~$ sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg   R:~$ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null   R:~$ sudo apt update   R:~$ sudo apt upgrade   R:~$ sudo apt install ros-humble-desktop   R:~$ sudo apt install ros-dev-tools
+R:$ source /opt/ros/humble/setup.bash   R:$ ros2 run demo_nodes_cpp talker
+
+中村　俊幸. 趣味のロボット製作　ROS 2入門編 (p.55). Kindle 版. 
+
+$ ssh pi@raspi4.local   R:$ source /opt/ros/humble/setup.bash   R:$ ros2 run demo_nodes_py listener
+
+中村　俊幸. 趣味のロボット製作　ROS 2入門編 (p.56). Kindle 版. 
+R:$ source /opt/ros/humble/setup.bash   R:$ mkdir –p ~/ros2_ws/src
+
+中村　俊幸. 趣味のロボット製作　ROS 2入門編 (p.59). Kindle 版. 
+R:$ cd ~/ros2_ws/src
+
+中村　俊幸. 趣味のロボット製作　ROS 2入門編 (p.59). Kindle 版. 
+R:~/ros2_ws/src$ ros2 pkg create --build-type ament_python py_pubsub
+
+中村　俊幸. 趣味のロボット製作　ROS 2入門編 (p.60). Kindle 版. 
+R:~/ros2_ws/src/py_pubsub$ cd py_pubsub   R:~/ros2_ws/src/py_pubsub/py_pubsub$ touch subscriber_member_function.py
+
+中村　俊幸. 趣味のロボット製作　ROS 2入門編 (p.60). Kindle 版. 
+entry_points={   'console_scripts': [   'listener = py_pubsub.subscriber_member_
+
+中村　俊幸. 趣味のロボット製作　ROS 2入門編 (p.62). Kindle 版. 
+function:main',   ],   },
+
+中村　俊幸. 趣味のロボット製作　ROS 2入門編 (p.62). Kindle 版. 
+R:~/ros2_ws/src/py_pubsub/py_pubsub$ cd   R:~$ cd ros2_ws   R:~/ros2_ws$ sudo rosdep init   R:~/ros2_ws$ rosdep update   R:~/ros2_ws$ rosdep install -i --from-path src --rosdistro humble -y
+
+中村　俊幸. 趣味のロボット製作　ROS 2入門編 (p.62). Kindle 版. 
+R:~/ros2_ws$ colcon build --packages-select py_pubsub
+
+中村　俊幸. 趣味のロボット製作　ROS 2入門編 (p.62). Kindle 版. 
+R:~/ros2_ws$ source install/setup.bash
+
+中村　俊幸. 趣味のロボット製作　ROS 2入門編 (p.63). Kindle 版. 
+R:~/ros2_ws$ source /opt/ros/humble/setup.bash   R:~/ros2_ws$ ros2 run py_pubsub listener
+
+中村　俊幸. 趣味のロボット製作　ROS 2入門編 (p.63). Kindle 版. 
+$ cd ros2_ws   ~/ros2_ws$ source /opt/ros/humble/setup.bash   ~/ros2_ws$ colcon build --packages-select py_pubsub   ~/ros2_ws$ source install/setup.bash   ~/ros2_ws$ ros2 run py_pubsub talker
+
+中村　俊幸. 趣味のロボット製作　ROS 2入門編 (p.63). Kindle 版. 
 
