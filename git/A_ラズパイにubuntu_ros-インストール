@@ -3,7 +3,7 @@
 もう一つ、「avahi-daemon」をインストールして、設定したホスト名（raspi4）でログインできるようにします。
 インストールが完了したら一回再起動します。
 ~$ sudo apt install avahi-daemon
-~$ sudo reboot
+~$ sudo reboot 24-4-9
 R:~$ sudo apt install software-properties-common
 R:~$ sudo add-apt-repository universe
 R:~$ sudo apt update && sudo apt install curl -y
