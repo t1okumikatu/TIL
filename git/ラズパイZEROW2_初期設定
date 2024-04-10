@@ -1,10 +1,22 @@
 raspi-imagerからの初期設定
 ラジコンをラズパイでROS制御
 https://fan4fun2rc.blog.jp/archives/26016085.html
-
+==================
 個人用アクセス トークンを管理する
 https://docs.github.com/ja/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+personal access token のセキュリティ保護を維持する
+Personal access token はパスワードのようなものであり、どちらにも同じ固有のセキュリティ リスクがあります。 新しい personal access token を作成する前に、より安全な認証方法を使用できるかどうかを検討してください。
 
+コマンド ラインから GitHub にアクセスするには、personal access token を作成する代わりに、GitHub CLI または Git Credential Manager を使用できます。
+GitHub Actions ワークフローで personal access token を使う場合は、代わりに組み込み GITHUB_TOKEN を使用できるかどうかを検討してください。 詳しくは、「自動トークン認証」を参照してください。
+これらのオプションを使用できず、personal access token を作成する必要がある場合は、別の CLI サービスを使ってトークンを安全に格納することを検討してください。
+
+スクリプトで personal access token を使う場合は、トークンをシークレットとして格納し、GitHub Actions を使ってスクリプトを実行できます。 詳しくは、「GitHub Actions でのシークレットの使用」をご覧ください。また、トークンを Codespaces シークレットとして格納し、Codespaces でスクリプトを実行することもできます。 詳細については、「GitHub Codespaces のアカウント固有のシークレットの管理」を参照してください。
+
+ベスト プラクティスについて詳しくは、「API 資格情報をセキュリティで保護する」をご覧ください。
+================
 GitHub.comにパスワードレス認証の導入
 https://github.blog/jp/2023-07-13-introducing-passwordless-authentication-on-github-com/
+
+
 
