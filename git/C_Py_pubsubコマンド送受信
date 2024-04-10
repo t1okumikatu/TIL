@@ -2,6 +2,7 @@ R:$ source /opt/ros/humble/setup.bash
 R:$ mkdir –p ~/ros2_ws/src 
 R:$ cd ~/ros2_ws/src
 ~/ros2_ws/src$ ros2 pkg create --build-type ament_python py_pubsub
+~/ros2_ws/src$ ros2 pkg create --build-type ament_python –node-name talker py_pubsub
 ~/ros2_ws/src$ cd py_pubsub/py_pubsub/
 ~/ros2_ws/src/py_pubsub/py_pubsub $ touch publisher_member_function.py
 
