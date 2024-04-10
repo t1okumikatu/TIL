@@ -1,3 +1,10 @@
 raspi-imagerからの初期設定
 ラジコンをラズパイでROS制御
 https://fan4fun2rc.blog.jp/archives/26016085.html
+
+個人用アクセス トークンを管理する
+https://docs.github.com/ja/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+
+GitHub.comにパスワードレス認証の導入
+https://github.blog/jp/2023-07-13-introducing-passwordless-authentication-on-github-com/
+
