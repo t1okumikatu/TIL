@@ -34,7 +34,8 @@ R:~/ros2_ws$ rosdep update
 R:~/ros2_ws$ rosdep install -i --from-path src --rosdistro humble -y
 R:~/ros2_ws$ colcon build --packages-select py_pubsub
 R:~/ros2_ws$ source install/setup.bash
-R:~/ros2_ws$ source /opt/ros/humble/setup.bash   R:~/ros2_ws$ ros2 run py_pubsub listener
+R:~/ros2_ws$ source /opt/ros/humble/setup.bash 
+R:~/ros2_ws$ ros2 run py_pubsub listener
 $ cd ros2_ws
 ~/ros2_ws$ source /opt/ros/humble/setup.bash
 ~/ros2_ws$ colcon build --packages-select py_pubsub
