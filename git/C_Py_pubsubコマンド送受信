@@ -9,7 +9,7 @@ R:$ cd ~/ros2_ws/src
 entry_points={   'console_scripts': [   
 'talker = py_pubsub.publisher_member_function:main',
 ],   },
-
+================
 ~/ros2_ws/src$ ros2 pkg create --build-type ament_python –node-name talker py_pubsub
 ■subscriberノードを書く
 entry_points={   'console_scripts': [   
