@@ -1,0 +1,13 @@
+PIGPIOのインストール
+Ubuntu Serverにはg++もmakeも入っていないのでインストールする必要がありました。
+
+sudo apt install g++ make
+
+その後、PIGPIOをインストールしました。
+
+mkdir ~/tmp
+cd ~/tmp
+git clone https://github.com/joan2937/pigpio.git
+cd pigpio
+make
+sudo make install
