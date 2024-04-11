@@ -1,2 +1,41 @@
+======ノートPC側=======
+$ source /opt/ros/humble/setup.bash
+$ cd ros2_ws/src
+~/ros2_ws/src$ ros2 pkg create –-build-type ament_python
+–-node-name command_publisher robot_controller
+==setup.py==
+entry_points={   'console_scripts': [   
+'commander = robot_controller.command_publisher:main',
+],   },
+==
+ ~/ros2_ws$ 
+rosdep install -i --from-path src --rosdistro humble -y
+~/ros2_ws$
+colcon build --packages-select robot_controller
+~/ros2_ws$ source install/setup.bash
+~/ros2_ws$ ros2 run robot_controller commander
+======ラズパイzerow2  =====
+R:$ source /opt/ros/humble/setup.bash
+R:$ cd ros2_ws/src
+R:~/ros2_ws/src$ 
+ros2 pkg create –-build-type ament_python –-node-name command_subscriber robot_controller
+==setup.py==
+entry_points={   
+'console_scripts': [   
+'subscriber = robot_controller.command_subscriber:main',
+],   },
+======
+ R:~/ros2_ws$
+rosdep install -i --from-path src --rosdistro humble -y
+R:~/ros2_ws$
+colcon build --packages-select robot_controller
+R:~/ros2_ws$ source install/setup.bash
+R:~/ros2_ws$ ros2 run robot_controller subscriber
+~/ros2_ws$ ros2 run robot_controller commander
+
+
+
+
+
 
 
