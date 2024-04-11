@@ -1,2 +1,4 @@
-
+モータ駆動テスト
+touch motor_drive.py　　　片輪
+touch motor_drive_2.py   両輪
 
