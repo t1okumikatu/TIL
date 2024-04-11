@@ -1,8 +1,8 @@
 ======ノートPC側=======
 $ source /opt/ros/humble/setup.bash
 $ cd ros2_ws/src
-~/ros2_ws/src$ ros2 pkg create –-build-type ament_python
-–-node-name command_publisher robot_controller
+~/ros2_ws/src$ ros2 pkg create --build-type ament_python
+--node-name command_publisher robot_controller
 ==setup.py==
 entry_points={   'console_scripts': [   
 'commander = robot_controller.command_publisher:main',
