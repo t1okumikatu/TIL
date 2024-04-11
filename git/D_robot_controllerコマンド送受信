@@ -1,3 +1,7 @@
+~/ros2_ws$ sudo rosdep init
+~/ros2_ws$ rosdep update
+~/ros2_ws$ rosdep install -i --from-path src --rosdistro humble -y
+~
 ======ノートPC側=======
 $ source /opt/ros/humble/setup.bash
 $ cd ros2_ws/src
