@@ -1,1 +1,21 @@
+R:~/ros2_ws$ cd src/robot_controller/robot_controller
+R:~/ros2_ws/src/robot_controller/robot_controller
+$ touch command_subscriber_action.py
+===setup.py====
+entry_points={       
+'console_scripts': [           
+'action = robot_controller.command_subscriber_action:main',
+],   },
+===============
+R:~/ros2_ws$ sudo pigpiod
+R:~/ros2_ws$
+rosdep install -i --from-path src --rosdistro humble -y
+R:~/ros2_ws$
+colcon build --packages-select robot_controller
+R:~/ros2_ws$ source install/setup.bash
+R:~/ros2_ws$ ros2 run robot_controller action
+~/ros2_ws$ ros2 run robot_controller commander
+
+
+
 
