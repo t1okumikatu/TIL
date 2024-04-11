@@ -21,7 +21,7 @@ entry_points={   'console_scripts': [
 ],   },
 ==
  ~/ros2_ws$ 
-rosdep install -i --from-path src --rosdistro humble -y
+rosdep install -i --from-path src --rosdistro humble -y　4-11 py_pubsub error
 ~/ros2_ws$
 colcon build --packages-select robot_controller
 ~/ros2_ws$ source install/setup.bash
