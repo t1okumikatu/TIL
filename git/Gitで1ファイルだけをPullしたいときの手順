@@ -1,3 +1,5 @@
+git pull origin master　　　main
+＝＝＝＝＝＝＝＝＝
 git fetch
 git checkout -m origin/master Readme.md
 git add Readme.md
