@@ -1,1 +1,13 @@
+１　WEBカメラとOpenCV 
+ここからはUSB接続のWEBカメラと「OpenCV」という画像処理ライブラリを使っていきます。
+まずノートPCでOpenCVを試し、ROS2との連携を確認した後にRaspberry Piとカメラを接続します。
+■OpenCVをインストール  ターミナルで次のように入力してOpenCVをインストールします。  
+$ sudo apt install python3-pip 
+$ pip3 install opencv-contrib-python==4.6.0.66
+■ROS2でOpenCVを利用  ROS2のPublisherノード、 Subscriberノードの間で画像をやり取りしてみます。
+新たにパッケージ「image_pubsub」を作成します。  
+~/ros2_ws/src$ ros2 pkg create -–build-type ament_python image_pubsub 
+~/ros2_ws/src$ cd image_pubsub/image_pubsub  
+~/ros2_ws/src/image_pubsub/image_pubsub $ touch image_publisher.py 
+「Visual Studio Code」でPublisherノードのプログラムを書いていきます。
 
